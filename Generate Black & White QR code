@@ -1,0 +1,4 @@
+import qrcode as qr
+
+img = qr.make("I'm a programmer & I love to do it all day")
+img.save("Master_NB.png")
