@@ -1,0 +1,37 @@
+import qrcode as qr
+
+code=qr.QRCode(version=1,
+               error_correction=qr.constants.ERROR_CORRECT_H,
+               box_size=10,border=4)
+code.add_data("https://dev-nb-developer.pantheonsite.io/")
+code.make(fit=True)
+img=code.make_image(fill_color='darkblue',back_color='white')
+img.save("Master.png")
+
+
+#For User
+
+import qrcode as qr
+
+print('Enter your qr code information:')
+info = input()
+print('Enter your file name:')
+filename = input()
+print('Enter your file format:')
+format=input()
+print('Enter box size:')
+box = input()
+print('Enter border size:')
+border=input()
+print('Enter BackGround color')
+bgcolor = input()
+print('Enter fill color:')
+fill = input()
+
+qrc=qr.QRCode(version=1,
+             error_correction=qr.constants.ERROR_CORRECT_H,
+             box_size=box,border=border)
+qrc.add_data(info)
+qrc.make(fit=True)
+img=qrc.make_image(fill_color=f'{fill}',back_color=f'{bgcolor}')
+img.save(f'{filename}.{format}')
