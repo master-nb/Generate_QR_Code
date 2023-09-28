@@ -1,0 +1,10 @@
+import qrcode as qr
+print('Enter your qr code information:')
+info = input()
+print('Enter your file name:')
+filename = input()
+print('Enter your file format:')
+format=input()
+
+img=qr.make(info)
+img.save(f'{filename}.{format}')
